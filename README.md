@@ -25,10 +25,9 @@
 We welcome contributions from the community! You can:
 - Report issues and suggest features via [GitHub Issues](https://github.com/EcoLLM/EcoLLM-extension/issues).
 - Contribute code by submitting a pull request.
-- Join discussions on sustainable AI in our [community forum](https://github.com/EcoLLM/EcoLLM-extension/discussions).
 
 ## Contact & Support 📬
-For inquiries, reach out via [contact@ecollm.com](mailto:contact@ecollm.com) or visit our website at [www.ecollm.com](https://www.ecollm.com).
+For inquiries, reach out via [contact@ecollm.com](mailto:contact@ecollm.fr) or visit our website at [www.ecollm.com](https://www.ecollm.fr).
 
 ---
 
