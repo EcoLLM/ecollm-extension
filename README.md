@@ -27,7 +27,7 @@ We welcome contributions from the community! You can:
 - Contribute code by submitting a pull request.
 
 ## Contact & Support 📬
-For inquiries, reach out via [contact@ecollm.com](mailto:contact@ecollm.fr) or visit our website at [www.ecollm.com](https://www.ecollm.fr).
+For inquiries, reach out via [contact@ecollm.fr](mailto:contact@ecollm.fr) or visit our website at [www.ecollm.fr](https://www.ecollm.fr).
 
 ---
 
