@@ -3,9 +3,7 @@
   "description": "EcoLLM extension",
   "version": "0.0.1",
   "manifest_version": 3,
-  "permissions": ["scripting",
-                  "storage",
-                  "tabs",
+  "permissions": ["storage",
                   "downloads",
                   "sidePanel"],
   "action": {
