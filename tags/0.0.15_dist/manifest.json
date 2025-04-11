@@ -1,0 +1,68 @@
+{
+  "name": "EcoLLM Extension",
+  "description": "EcoLLM extension",
+  "version": "0.0.15",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "downloads",
+    "sidePanel"
+  ],
+  "action": {
+    "default_icon": "ecollm-transparent.png"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content-script-openai.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://chat.mistral.ai/*"
+      ],
+      "js": [
+        "content-script-mistral.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://chat.mistral.ai/*",
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content-script-all.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "override-network.js",
+        "override-network.js.map",
+        "background.js.map",
+        "popup.html",
+        "styles.css",
+        "popup.js.map",
+        "content-script.js.map",
+        "*.js",
+        "*.svg"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
