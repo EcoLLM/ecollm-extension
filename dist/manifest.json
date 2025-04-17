@@ -3,6 +3,7 @@
   "description": "EcoLLM extension",
   "version": "0.0.1",
   "manifest_version": 3,
+  "default_locale": "en",
   "permissions": ["storage",
                   "downloads",
                   "sidePanel"],
