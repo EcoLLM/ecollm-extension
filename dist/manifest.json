@@ -39,6 +39,7 @@
                             "override-network.js.map",
                             "background.js.map",
                             "popup.html",
+                            "home.html",
                             "styles.css",
                             "popup.js.map",
                             "content-script.js.map",
