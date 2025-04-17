@@ -1,0 +1,62 @@
+{
+    "appName": {
+        "message": "EcoLLM"
+    },
+    "what_s_new": {
+        "message": "Quoi de neuf"
+    },
+    "dashboard": {
+        "message": "Tableau de bord"
+    },
+    "openAI_free_tier": {
+        "message": "Le niveau gratuit d'OpenAI est désormais pris en charge."
+    },
+    "gpt4o_mini_fix": {
+        "message": "Problème avec gpt-4o-mini corrigé."
+    },
+    "features": {
+        "message": "Fonctionnalités"
+    },
+    "sustainability_tips": {
+        "message": "Conseils de Durabilité"
+    },
+    "settings": {
+        "message": "Paramètres"
+    },
+    "extensionTitle": {
+        "message": "Extension EcoLLM"
+    },
+    "extensionSubtitle": {
+        "message": "Suivez et réduisez l'impact environnemental de votre utilisation de l'IA."
+    },
+    "dashboard_welcome": {
+        "message": "Bienvenue dans votre tableau de bord. Surveillez votre utilisation de l'IA et vos métriques énergétiques ici."
+    },
+    "feature1": {
+        "message": "Surveillez la consommation d'énergie"
+    },
+    "feature2": {
+        "message": "Suivez les émissions de CO₂"
+    },
+    "feature3": {
+        "message": "Optimisez votre utilisation de l'IA pour la durabilité"
+    },
+    "tips_description": {
+        "message": "Découvrez des conseils efficaces pour rendre votre utilisation de l'IA plus écologique."
+    },
+    "settings_description": {
+        "message": "Ajustez vos préférences et configurations ici."
+    },
+    "get_started": {
+        "message": "Commencer"
+    },
+    "get_started_description": {
+        "message": "Découvrez comment EcoLLM peut vous aider à rendre votre utilisation de l'IA plus durable. Cliquez sur le bouton ci-dessous pour en savoir plus."
+    },
+    "get_started_button": {
+        "message": "Commencer"
+    },
+    "footerText": {
+        "message": "© EcoLLM. Conçu avec soin pour un avenir durable."
+    }
+}
