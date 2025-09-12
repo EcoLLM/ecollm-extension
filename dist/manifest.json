@@ -18,6 +18,11 @@
   },
   "content_scripts": [
     {
+      "matches": ["https://chat.ecollm.fr/*"],
+      "js": ["content-script-chat-ecollm.js"],
+      "run_at": "document_idle"
+    },
+    {
       "matches": ["https://chatgpt.com/*"],
       "js": ["content-script-openai.js"],
       "run_at": "document_idle"
