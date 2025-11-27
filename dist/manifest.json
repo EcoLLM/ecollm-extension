@@ -4,12 +4,19 @@
   "version": "0.0.1",
   "manifest_version": 3,
   "default_locale": "en",
-  "permissions": ["storage",
-                  "downloads",
-                  "sidePanel"],
+  "permissions": [
+    "storage",
+    "downloads",
+    "sidePanel",
+    "scripting",
+    "tabs"
+  ],
   "action": {
     "default_icon": "ecollm-transparent.png"
   },
+  "host_permissions": [
+    "*://*/*"
+  ],
   "side_panel": {
     "default_path": "sidepanel.html"
   },
@@ -18,41 +25,60 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://chat.ecollm.fr/*"],
-      "js": ["content-script-chat-ecollm.js"],
+      "matches": [
+        "https://chat.ecollm.fr/*"
+      ],
+      "js": [
+        "content-script-chat-ecollm.js"
+      ],
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://chatgpt.com/*"],
-      "js": ["content-script-openai.js"],
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content-script-openai.js"
+      ],
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://chat.mistral.ai/*"],
-      "js": ["content-script-mistral.js"],
+      "matches": [
+        "https://chat.mistral.ai/*"
+      ],
+      "js": [
+        "content-script-mistral.js"
+      ],
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://chat.mistral.ai/*",
-                  "https://chatgpt.com/*"],
-      "js": ["content-script-all.js"],
+      "matches": [
+        "https://chat.mistral.ai/*",
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content-script-all.js"
+      ],
       "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
-        {
-            "resources": [  "override-network.js",
-                            "override-network.js.map",
-                            "background.js.map",
-                            "popup.html",
-                            "home.html",
-                            "styles.css",
-                            "popup.js.map",
-                            "content-script.js.map",
-                            "*.js",
-                            "*.svg"
-                          ],
-            "matches": ["<all_urls>"]
-        }
-    ]
+    {
+      "resources": [
+        "override-network.js",
+        "override-network.js.map",
+        "background.js.map",
+        "popup.html",
+        "home.html",
+        "styles.css",
+        "popup.js.map",
+        "content-script.js.map",
+        "*.js",
+        "*.svg"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
 }
