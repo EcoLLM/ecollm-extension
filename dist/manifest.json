@@ -65,6 +65,7 @@
   "web_accessible_resources": [
     {
       "resources": [
+        "20251203_models.json",
         "override-network.js",
         "override-network.js.map",
         "background.js.map",
