@@ -1,0 +1,6 @@
+<settings>
+    <backendUrl>http://localhost:3000</backendUrl>
+    <showSettingsTab>false</showSettingsTab>
+    <showRapportTab>false</showRapportTab>
+    <showEmissionTab>false</showEmissionTab>
+</settings>
