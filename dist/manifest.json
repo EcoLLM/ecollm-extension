@@ -53,8 +53,18 @@
     },
     {
       "matches": [
+        "https://copilot.microsoft.com/*"
+      ],
+      "js": [
+        "content-script-copilot.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
         "https://chat.mistral.ai/*",
-        "https://chatgpt.com/*"
+        "https://chatgpt.com/*",
+        "https://copilot.microsoft.com/*"
       ],
       "js": [
         "content-script-all.js"
