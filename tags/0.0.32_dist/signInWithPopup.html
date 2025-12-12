@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EcoLLM Authentication</title>
+    <meta charset="UTF-8">
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import Firebase modules
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+      import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+
+      // Firebase configuration - This should match your firebaseConfig.ts
+      // IMPORTANT: Replace these with your actual Firebase config values
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT_ID.appspot.com",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // This code runs inside of an iframe in the extension's offscreen document.
+      // This gives you a reference to the parent frame, i.e. the offscreen document.
+      // You will need this to assign the targetOrigin for postMessage.
+      const PARENT_FRAME = document.location.ancestorOrigins && document.location.ancestorOrigins.length > 0 
+        ? document.location.ancestorOrigins[0] 
+        : '*';
+
+      // Google Auth Provider
+      const PROVIDER = new GoogleAuthProvider();
+
+      function sendResponse(result) {
+        try {
+          // Send the result back to the parent frame (offscreen document)
+          const response = {
+            success: !result.error,
+            user: result.user ? {
+              uid: result.user.uid,
+              email: result.user.email,
+              displayName: result.user.displayName,
+              photoURL: result.user.photoURL
+            } : null,
+            credential: result.credential ? {
+              accessToken: result.credential.accessToken,
+              idToken: result.credential.idToken
+            } : null,
+            error: result.error ? {
+              code: result.code || result.error.code,
+              message: result.message || result.error.message
+            } : null
+          };
+          globalThis.parent.postMessage(JSON.stringify(response), PARENT_FRAME);
+        } catch (e) {
+          globalThis.parent.postMessage(JSON.stringify({
+            success: false,
+            error: { message: `Error sending response: ${e.message}` }
+          }), PARENT_FRAME);
+        }
+      }
+
+      globalThis.addEventListener('message', function({ data }) {
+        if (data.initAuth) {
+          // Opens the Google sign-in page in a popup, inside of an iframe in the
+          // extension's offscreen document.
+          signInWithPopup(auth, PROVIDER)
+            .then((result) => {
+              sendResponse(result);
+            })
+            .catch((error) => {
+              sendResponse({ error });
+            });
+        } else if (data.signInWithEmail) {
+          // Email/password sign in
+          signInWithEmailAndPassword(auth, data.email, data.password)
+            .then((result) => {
+              sendResponse(result);
+            })
+            .catch((error) => {
+              sendResponse({ error });
+            });
+        } else if (data.createUserWithEmail) {
+          // Email/password sign up
+          createUserWithEmailAndPassword(auth, data.email, data.password)
+            .then((result) => {
+              sendResponse(result);
+            })
+            .catch((error) => {
+              sendResponse({ error });
+            });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>EcoLLM Authentication</h1>
+    <p>This page handles authentication for the EcoLLM Chrome Extension.</p>
+  </body>
+</html>
+
+
+
+
