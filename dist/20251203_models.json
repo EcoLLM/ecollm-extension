@@ -8,6 +8,24 @@
         },
         {
             "type": "alias",
+            "provider": "openai",
+            "name": "gpt-5.2",
+            "alias": "gpt-5"
+        },
+        {
+            "type": "alias",
+            "provider": "openai",
+            "name": "gpt-5.1-Instant",
+            "alias": "gpt-5"
+        },
+        {
+            "type": "alias",
+            "provider": "openai",
+            "name": "gpt-5.1-Thinking",
+            "alias": "gpt-5"
+        },
+        {
+            "type": "alias",
             "provider": "anthropic",
             "name": "claude-opus-4-1",
             "alias": "claude-opus-4-1-20250805"

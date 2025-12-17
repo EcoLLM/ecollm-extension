@@ -1,5 +1,5 @@
 <settings>
-    <backendUrl>http://localhost:3000</backendUrl>
+    <backendUrl>http://app.ecollm.fr</backendUrl>
     <showSettingsTab>false</showSettingsTab>
     <showRapportTab>false</showRapportTab>
     <showEmissionTab>false</showEmissionTab>
